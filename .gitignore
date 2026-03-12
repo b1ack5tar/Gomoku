@@ -1,0 +1,69 @@
+# ---- OS / Filesystem ----
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ---- Editors / IDEs ----
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ---- Logs / Runtime ----
+*.log
+*.pid
+*.out
+*.err
+
+# ---- Environment / Secrets ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+
+# ---- Archives / Packages ----
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# ---- Build / Cache (generic) ----
+dist/
+build/
+tmp/
+temp/
+.cache/
+sisyphus/
+.sisyphus/
+
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.ipynb_checkpoints/
+
+# ---- Virtual Environments ----
+.venv/
+venv/
+env/
+
+# ---- Node / Frontend ----
+node_modules/
+.pnpm-store/
+.npm/
+.yarn/
+
+# ---- Test / Coverage ----
+coverage/

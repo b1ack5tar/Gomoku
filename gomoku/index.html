@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>弈星五子棋</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>弈星五子棋</h1>
+    <div class="board-row">
+      <div class="side-panel record-panel">
+        <div class="panel-title">棋 谱</div>
+        <div class="record-list" id="record-list"></div>
+      </div>
+      <canvas id="board" width="630" height="630"></canvas>
+      <div class="side-panel player-panel">
+        <div class="panel-title">当 前</div>
+        <div class="piece-icon" id="piece-icon"></div>
+        <div class="player-name" id="player-name"></div>
+        <div class="player-action" id="player-action"></div>
+        <div class="move-count" id="move-count"></div>
+        <div class="panel-bottom">
+          <div class="mode-switch" id="mode-switch">
+            <button id="mode-casual-btn" class="mode-btn">休闲对局</button>
+            <button id="mode-match-btn" class="mode-btn">比赛对局</button>
+          </div>
+          <div class="timer-section">
+            <div class="timer-row">
+              <span class="timer-label">局时</span>
+              <span id="game-timer" class="timer-val">10:00</span>
+            </div>
+            <div class="timer-row">
+              <span class="timer-label">读秒</span>
+              <span id="move-timer" class="timer-val">00:30</span>
+            </div>
+          </div>
+          <div class="panel-btns">
+            <button id="toggle-move-num-btn">显示手数</button>
+            <button id="undo-btn">悔 棋</button>
+            <button id="restart">重新开始</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="modal-box">
+      <div id="modal-icon" class="modal-icon"></div>
+      <div id="modal-title" class="modal-title"></div>
+      <div id="modal-message" class="modal-message"></div>
+      <div class="modal-actions" id="modal-actions">
+        <button id="modal-cancel" class="modal-btn modal-btn-secondary">取 消</button>
+        <button id="modal-confirm" class="modal-btn">确 定</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
