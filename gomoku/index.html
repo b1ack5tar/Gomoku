@@ -8,39 +8,52 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>弈星五子棋</h1>
-    <div class="board-row">
-      <div class="side-panel record-panel">
-        <div class="panel-title">棋 谱</div>
-        <div class="record-list" id="record-list"></div>
-      </div>
-      <canvas id="board" width="630" height="630"></canvas>
-      <div class="side-panel player-panel">
-        <div class="panel-title">当 前</div>
-        <div class="piece-icon" id="piece-icon"></div>
-        <div class="player-name" id="player-name"></div>
-        <div class="player-action" id="player-action"></div>
-        <div class="move-count" id="move-count"></div>
-        <div class="panel-bottom">
-          <div class="mode-switch" id="mode-switch">
-            <button id="mode-casual-btn" class="mode-btn">休闲对局</button>
-            <button id="mode-match-btn" class="mode-btn">比赛对局</button>
+  <div id="app-shell" class="app-shell">
+    <div id="app-stage" class="app-stage">
+      <div id="app-container" class="container">
+        <h1>弈星五子棋</h1>
+        <div class="board-row">
+          <div class="side-panel record-panel">
+            <div class="panel-title">棋 谱</div>
+            <div class="record-list" id="record-list"></div>
           </div>
-          <div class="timer-section">
-            <div class="timer-row">
-              <span class="timer-label">局时</span>
-              <span id="game-timer" class="timer-val">10:00</span>
-            </div>
-            <div class="timer-row">
-              <span class="timer-label">读秒</span>
-              <span id="move-timer" class="timer-val">00:30</span>
+          <div class="board-column">
+            <canvas id="board" width="630" height="630"></canvas>
+            <div class="control-panel">
+              <div class="control-row control-row-actions">
+                <button id="hint-btn" type="button">AI提示</button>
+                <button id="toggle-move-num-btn" type="button">显示手数</button>
+                <button id="undo-btn" type="button">悔 棋</button>
+                <button id="restart" type="button">重新开始</button>
+              </div>
             </div>
           </div>
-          <div class="panel-btns">
-            <button id="toggle-move-num-btn">显示手数</button>
-            <button id="undo-btn">悔 棋</button>
-            <button id="restart">重新开始</button>
+          <div class="side-panel player-panel">
+            <div class="panel-title">当 前</div>
+            <div class="piece-icon" id="piece-icon"></div>
+            <div class="player-name" id="player-name"></div>
+            <div class="player-action" id="player-action"></div>
+            <div class="move-count" id="move-count"></div>
+            <div class="battle-status" id="battle-status"></div>
+            <div class="panel-bottom">
+              <div class="panel-controls">
+                <div class="mode-switch panel-mode-switch" id="mode-switch">
+                  <button id="mode-casual-btn" class="mode-btn" type="button">休闲对局</button>
+                  <button id="mode-match-btn" class="mode-btn" type="button">比赛对局</button>
+                </div>
+                <button id="battle-config-btn" class="battle-config-btn" type="button">对战设置</button>
+              </div>
+              <div class="timer-section">
+                <div class="timer-row">
+                  <span class="timer-label">局时</span>
+                  <span id="game-timer" class="timer-val">10:00</span>
+                </div>
+                <div class="timer-row">
+                  <span class="timer-label">读秒</span>
+                  <span id="move-timer" class="timer-val">00:30</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -48,12 +61,13 @@
   </div>
   <div id="modal-overlay" class="modal-overlay hidden">
     <div class="modal-box">
+      <button id="modal-close" class="modal-close-btn hidden" type="button" aria-label="关闭弹窗">×</button>
       <div id="modal-icon" class="modal-icon"></div>
       <div id="modal-title" class="modal-title"></div>
       <div id="modal-message" class="modal-message"></div>
       <div class="modal-actions" id="modal-actions">
-        <button id="modal-cancel" class="modal-btn modal-btn-secondary">取 消</button>
-        <button id="modal-confirm" class="modal-btn">确 定</button>
+        <button id="modal-cancel" class="modal-btn modal-btn-secondary" type="button">取 消</button>
+        <button id="modal-confirm" class="modal-btn" type="button">确 定</button>
       </div>
     </div>
   </div>
